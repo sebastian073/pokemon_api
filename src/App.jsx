@@ -8,27 +8,27 @@ import Favoritos from './Componentes/Favoritos'
 import Original from './Componentes/Original'
 import Usuario from './Componentes/Usuario'
 import Menu from './Componentes/Menu';
-
+import { AppProvider } from './Componentes/contexto/contexto';
 
 
 function App() {
 
   return (
+    <AppProvider>
     <Router>
-
       <Menu />
-     
+
       <Routes>
-        <Route path="/" element={<Listar />} />
-        <Route path="/usuarios" element={<Usuario />} />
+        <Route path="/" element={<Lista />} />
+        <Route path="/usuarios" element={<Usuarios />} />
         <Route path="/aleatorios" element={<Aleatorios />} />
-        <Route path="/Original" element={<Original />} />
+        <Route path="/capturados" element={<Capturados />} />
         <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/:nombre" element={<Detalle />} />
         <Route path="/detalle/:name" element={<Detalle />} />
       </Routes>
-   
+
     </Router>
+    </AppProvider>
   );
 }
 
